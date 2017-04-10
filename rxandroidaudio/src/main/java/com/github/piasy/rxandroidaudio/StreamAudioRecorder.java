@@ -40,8 +40,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * <em>NOTE: users should only have one instance active at the same time.</em>
  */
 public final class StreamAudioRecorder {
-    public static final int DEFAULT_SAMPLE_RATE = 44100;
-    public static final int DEFAULT_BUFFER_SIZE = 2048;
+    //public static final int DEFAULT_SAMPLE_RATE = 44100;
+    //public static final int DEFAULT_BUFFER_SIZE = 2048;
+    public static final int DEFAULT_SAMPLE_RATE = 16000;
+    public static final int DEFAULT_BUFFER_SIZE = 640; //fs*20*2/1000
 
     private static final String TAG = "StreamAudioRecorder";
 
@@ -147,6 +149,7 @@ public final class StreamAudioRecorder {
                         if (ret > 0) {
                             mAudioDataCallback.onAudioData(
                                     short2byte(mShortBuffer, ret, mByteBuffer), ret * 2);
+                            //do whatever you want
                         } else {
                             onError(ret);
                             break;

@@ -37,7 +37,8 @@ import android.util.Log;
  */
 public final class StreamAudioPlayer {
     private static final String TAG = "StreamAudioPlayer";
-    public static final int DEFAULT_SAMPLE_RATE = 44100;
+    //public static final int DEFAULT_SAMPLE_RATE = 44100;
+    public static final int DEFAULT_SAMPLE_RATE = 16000;
 
     private AudioTrack mAudioTrack;
 
